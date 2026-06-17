@@ -1,0 +1,666 @@
+{
+  "annotations": [
+    {
+      "kind": "AnnotationQuery",
+      "spec": {
+        "builtIn": true,
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "query": {
+          "datasource": {
+            "name": "-- Grafana --"
+          },
+          "group": "grafana",
+          "kind": "DataQuery",
+          "spec": {},
+          "version": "v0"
+        }
+      }
+    }
+  ],
+  "cursorSync": "Off",
+  "editable": true,
+  "elements": {
+    "panel-1": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "ffoc09578b7r4d"
+                    },
+                    "group": "mysql",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "dataset": "tpi_rendimiento_academico",
+                      "editorMode": "builder",
+                      "format": "table",
+                      "rawQuery": true,
+                      "rawSql": "SELECT ingreso_familiar, AVG(nota_final) FROM tpi_rendimiento_academico.rendimiento_limpio GROUP BY ingreso_familiar, nota_final LIMIT 50 ",
+                      "sql": {
+                        "columns": [
+                          {
+                            "parameters": [
+                              {
+                                "name": "ingreso_familiar",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          },
+                          {
+                            "name": "AVG",
+                            "parameters": [
+                              {
+                                "name": "nota_final",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          }
+                        ],
+                        "groupBy": [
+                          {
+                            "property": {
+                              "name": "ingreso_familiar",
+                              "type": "string"
+                            },
+                            "type": "groupBy"
+                          },
+                          {
+                            "property": {
+                              "name": "nota_final",
+                              "type": "string"
+                            },
+                            "type": "groupBy"
+                          }
+                        ],
+                        "limit": 50
+                      },
+                      "table": "rendimiento_limpio"
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 1,
+        "links": [],
+        "title": "Nota por Ingreso Familiar",
+        "vizConfig": {
+          "group": "barchart",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "axisBorderShow": false,
+                  "axisCenteredZero": false,
+                  "axisColorMode": "text",
+                  "axisLabel": "",
+                  "axisPlacement": "auto",
+                  "fillOpacity": 80,
+                  "gradientMode": "none",
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  },
+                  "lineWidth": 2,
+                  "scaleDistribution": {
+                    "type": "linear"
+                  },
+                  "thresholdsStyle": {
+                    "mode": "off"
+                  }
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "barRadius": 0,
+              "barWidth": 0.97,
+              "colorByField": "nota_final",
+              "fullHighlight": false,
+              "groupWidth": 0.7,
+              "legend": {
+                "calcs": [],
+                "displayMode": "list",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "orientation": "vertical",
+              "showValue": "auto",
+              "stacking": "none",
+              "tooltip": {
+                "hideZeros": false,
+                "mode": "single",
+                "sort": "none"
+              },
+              "xField": "ingreso_familiar",
+              "xTickLabelRotation": 0,
+              "xTickLabelSpacing": 100
+            }
+          },
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-2": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "ffoc09578b7r4d"
+                    },
+                    "group": "mysql",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "dataset": "tpi_rendimiento_academico",
+                      "editorMode": "builder",
+                      "format": "table",
+                      "rawQuery": true,
+                      "rawSql": "SELECT COUNT(categoria_esfuerzo) FROM tpi_rendimiento_academico.rendimiento_limpio GROUP BY categoria_esfuerzo LIMIT 50 ",
+                      "sql": {
+                        "columns": [
+                          {
+                            "name": "COUNT",
+                            "parameters": [
+                              {
+                                "name": "categoria_esfuerzo",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          }
+                        ],
+                        "groupBy": [
+                          {
+                            "property": {
+                              "name": "categoria_esfuerzo",
+                              "type": "string"
+                            },
+                            "type": "groupBy"
+                          }
+                        ],
+                        "limit": 50
+                      },
+                      "table": "rendimiento_limpio"
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 2,
+        "links": [],
+        "title": "Repartición de Esfuerzo por Categoria",
+        "vizConfig": {
+          "group": "piechart",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "custom": {
+                  "hideFrom": {
+                    "legend": false,
+                    "tooltip": false,
+                    "viz": false
+                  }
+                }
+              },
+              "overrides": []
+            },
+            "options": {
+              "displayLabels": [
+                "name",
+                "value"
+              ],
+              "legend": {
+                "displayMode": "table",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "pieType": "pie",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "/^COUNT\\(categoria_esfuerzo\\)$/",
+                "values": true
+              },
+              "sort": "asc",
+              "tooltip": {
+                "hideZeros": false,
+                "mode": "none",
+                "sort": "none"
+              }
+            }
+          },
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-3": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "ffoc09578b7r4d"
+                    },
+                    "group": "mysql",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "dataset": "tpi_rendimiento_academico",
+                      "editorMode": "builder",
+                      "format": "table",
+                      "rawSql": "SELECT educacion_padres, COUNT(educacion_padres) FROM tpi_rendimiento_academico.rendimiento_limpio GROUP BY educacion_padres LIMIT 50 ",
+                      "sql": {
+                        "columns": [
+                          {
+                            "parameters": [
+                              {
+                                "name": "educacion_padres",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          },
+                          {
+                            "name": "COUNT",
+                            "parameters": [
+                              {
+                                "name": "educacion_padres",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          }
+                        ],
+                        "groupBy": [
+                          {
+                            "property": {
+                              "name": "educacion_padres",
+                              "type": "string"
+                            },
+                            "type": "groupBy"
+                          }
+                        ],
+                        "limit": 50
+                      },
+                      "table": "rendimiento_limpio"
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 3,
+        "links": [],
+        "title": "Cantidad de padres por Nivel Académico",
+        "vizConfig": {
+          "group": "bargauge",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "thresholds"
+                },
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                }
+              },
+              "overrides": [
+                {
+                  "__systemRef": "hideSeriesFrom",
+                  "matcher": {
+                    "id": "byNames",
+                    "options": {
+                      "mode": "exclude",
+                      "names": [
+                        "educacion_padres"
+                      ],
+                      "prefix": "All except:",
+                      "readOnly": true
+                    }
+                  },
+                  "properties": []
+                }
+              ]
+            },
+            "options": {
+              "displayMode": "lcd",
+              "legend": {
+                "calcs": [],
+                "displayMode": "table",
+                "placement": "bottom",
+                "showLegend": true
+              },
+              "maxVizHeight": 250,
+              "minVizHeight": 0,
+              "minVizWidth": 8,
+              "namePlacement": "left",
+              "orientation": "horizontal",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "/^COUNT\\(educacion_padres\\)$/",
+                "values": true
+              },
+              "showUnfilled": true,
+              "sizing": "manual",
+              "valueMode": "text"
+            }
+          },
+          "version": "13.0.1+security-01"
+        }
+      }
+    },
+    "panel-4": {
+      "kind": "Panel",
+      "spec": {
+        "data": {
+          "kind": "QueryGroup",
+          "spec": {
+            "queries": [
+              {
+                "kind": "PanelQuery",
+                "spec": {
+                  "hidden": false,
+                  "query": {
+                    "datasource": {
+                      "name": "ffoc09578b7r4d"
+                    },
+                    "group": "mysql",
+                    "kind": "DataQuery",
+                    "spec": {
+                      "dataset": "tpi_rendimiento_academico",
+                      "editorMode": "builder",
+                      "format": "table",
+                      "rawSql": "SELECT AVG(horas_estudio_semanal), genero FROM tpi_rendimiento_academico.rendimiento_limpio GROUP BY genero LIMIT 50 ",
+                      "sql": {
+                        "columns": [
+                          {
+                            "name": "AVG",
+                            "parameters": [
+                              {
+                                "name": "horas_estudio_semanal",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          },
+                          {
+                            "parameters": [
+                              {
+                                "name": "genero",
+                                "type": "functionParameter"
+                              }
+                            ],
+                            "type": "function"
+                          }
+                        ],
+                        "groupBy": [
+                          {
+                            "property": {
+                              "name": "genero",
+                              "type": "string"
+                            },
+                            "type": "groupBy"
+                          }
+                        ],
+                        "limit": 50,
+                        "whereJsonTree": {
+                          "children1": [],
+                          "id": "9b9a9989-0123-4456-b89a-b19e9db8a457",
+                          "properties": {
+                            "conjunction": "AND"
+                          },
+                          "type": "group"
+                        }
+                      },
+                      "table": "rendimiento_limpio"
+                    },
+                    "version": "v0"
+                  },
+                  "refId": "A"
+                }
+              }
+            ],
+            "queryOptions": {},
+            "transformations": []
+          }
+        },
+        "description": "",
+        "id": 4,
+        "links": [],
+        "title": "Promedio de horas de Estudio por Genero",
+        "vizConfig": {
+          "group": "gauge",
+          "kind": "VizConfig",
+          "spec": {
+            "fieldConfig": {
+              "defaults": {
+                "color": {
+                  "mode": "palette-classic"
+                },
+                "fieldMinMax": false,
+                "thresholds": {
+                  "mode": "absolute",
+                  "steps": [
+                    {
+                      "color": "green",
+                      "value": 0
+                    },
+                    {
+                      "color": "red",
+                      "value": 80
+                    }
+                  ]
+                },
+                "unit": "h"
+              },
+              "overrides": []
+            },
+            "options": {
+              "barShape": "rounded",
+              "barWidthFactor": 0.5,
+              "effects": {
+                "barGlow": false,
+                "centerGlow": false,
+                "gradient": true
+              },
+              "endpointMarker": "none",
+              "minVizHeight": 75,
+              "minVizWidth": 75,
+              "orientation": "auto",
+              "reduceOptions": {
+                "calcs": [
+                  "lastNotNull"
+                ],
+                "fields": "/^AVG\\(horas_estudio_semanal\\)$/",
+                "values": true
+              },
+              "segmentCount": 1,
+              "segmentSpacing": 0.3,
+              "shape": "gauge",
+              "showThresholdLabels": false,
+              "showThresholdMarkers": true,
+              "sizing": "auto",
+              "sparkline": true,
+              "textMode": "value_and_name"
+            }
+          },
+          "version": "13.0.1+security-01"
+        }
+      }
+    }
+  },
+  "layout": {
+    "kind": "GridLayout",
+    "spec": {
+      "items": [
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-1"
+            },
+            "height": 8,
+            "width": 12,
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-2"
+            },
+            "height": 16,
+            "width": 12,
+            "x": 12,
+            "y": 0
+          }
+        },
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-3"
+            },
+            "height": 8,
+            "width": 12,
+            "x": 0,
+            "y": 8
+          }
+        },
+        {
+          "kind": "GridLayoutItem",
+          "spec": {
+            "element": {
+              "kind": "ElementReference",
+              "name": "panel-4"
+            },
+            "height": 5,
+            "width": 12,
+            "x": 0,
+            "y": 16
+          }
+        }
+      ]
+    }
+  },
+  "links": [],
+  "liveNow": false,
+  "preferences": {
+    "layout": {
+      "kind": "GridLayout",
+      "spec": {
+        "items": []
+      }
+    }
+  },
+  "preload": false,
+  "tags": [],
+  "timeSettings": {
+    "autoRefresh": "",
+    "autoRefreshIntervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "fiscalYearStartMonth": 0,
+    "from": "now-6h",
+    "hideTimepicker": false,
+    "timezone": "browser",
+    "to": "now"
+  },
+  "title": "Parcial-02",
+  "variables": []
+}
