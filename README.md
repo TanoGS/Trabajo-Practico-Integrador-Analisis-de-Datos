@@ -1,18 +1,20 @@
-# 📊 TPI — Análisis de Rendimiento Académico
+#  TPI — Análisis de Rendimiento Académico
 
 **Tecnicatura Universitaria en Programación — UTN**
 
 Dashboard interactivo desarrollado con Streamlit para analizar el rendimiento académico de estudiantes.
 
-## 🚀 Deploy
+Grupo 25
+
+##  Deploy
 
 El dashboard está disponible online en:
 
-**[👉 Abrir Dashboard en Streamlit Cloud](https://share.streamlit.io)**
+**[ Abrir Dashboard en Streamlit Cloud](https://ze3qvl6yyunna5ljxr246v.streamlit.app/)**
 
 > Deploy automático: cada push a `main` actualiza la app.
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 ├── src/
@@ -29,7 +31,7 @@ El dashboard está disponible online en:
     └── config.toml         # Configuración del tema
 ```
 
-## 🛠️ Instalación Local
+## Instalación Local
 
 ```bash
 # 1. Clonar el repositorio
@@ -48,7 +50,7 @@ pip install -r requirements.txt
 streamlit run src/dashboard.py
 ```
 
-## 📊 Funcionalidades del Dashboard
+## Funcionalidades del Dashboard
 
 - **KPIs en tiempo real**: Total de estudiantes, promedio general, tasa de aprobación, % en riesgo
 - **Filtros interactivos**: Por departamento, género, nivel de ingreso, esfuerzo, calificación, asistencia y edad
@@ -59,7 +61,7 @@ streamlit run src/dashboard.py
   - Relación horas de sueño vs puntaje (bubble chart)
 - **Descarga de datos filtrados** en formato CSV
 
-## 🧪 Pipeline ETL
+## Pipeline ETL
 
 El dashboard aplica el pipeline ETL internamente:
 
@@ -68,7 +70,7 @@ El dashboard aplica el pipeline ETL internamente:
 3. **Outliers**: Detección y tratamiento con método IQR
 4. **Feature Engineering**: Crea columnas derivadas (calificación, puntaje total, índice de riesgo, etc.)
 
-## 📌 Requisitos
+## Requisitos
 
 - Python 3.9+
 - streamlit
@@ -78,7 +80,7 @@ El dashboard aplica el pipeline ETL internamente:
 
 ---
 
-## 📋 Consigna Original del TPI
+## Consigna Original del TPI
 
 ### Objetivo General
 > Desarrollar un sistema de análisis y visualización de datos que permita diagnosticar el desempeño académico, identificar factores de riesgo y proponer soluciones basadas en evidencia.
