@@ -78,4 +78,18 @@ El dashboard aplica el pipeline ETL internamente:
 
 ---
 
+## 📋 Consigna Original del TPI
+
+### Objetivo General
+> Desarrollar un sistema de análisis y visualización de datos que permita diagnosticar el desempeño académico, identificar factores de riesgo y proponer soluciones basadas en evidencia.
+
+### Hitos Cumplidos
+- ✅ **Hito 1**: Dataset con 5000+ registros de rendimiento académico
+- ✅ **Hito 2**: Pipeline ETL robusto (limpieza, outliers IQR, feature engineering)
+- ✅ **Hito 3**: 4+ visualizaciones profesionales (matplotlib/seaborn)
+- ✅ **Hito 4**: Dashboard interactivo con Streamlit (filtros dinámicos + KPIs)
+- ✅ **Hito 5**: Deploy en Streamlit Cloud con documentación completa
+
+---
+
 *UTN — Análisis de Datos — 2026*
